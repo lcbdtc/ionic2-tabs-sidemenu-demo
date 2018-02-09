@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Me
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div style="background-color: #0c60ee;height:150px" >
+    <div style="background-color: #0c60ee" align=center>
+      <img [src]="avatarPath" style="margin-top:20px;width: 100px;height:100px;border-radius:50px 50px 50px 50px;text-align: center;" (click)="presentActionSheet()">
+      <ion-icon name="camera" style="font-size: 30px;margin-left: -40px"></ion-icon>
+    </div>
+  </div>
+  <br>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-left style="font-size: 20px;margin-top: 4%">
+        <ion-icon name="person"></ion-icon>
+      </ion-avatar>
+      <ion-label>个人信息</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor=" let item of items;let index = i;">
+      <ion-avatar item-left style="font-size: 20px;margin-top: 4%">
+        <ion-icon name="{{item.icon}}"></ion-icon>
+      </ion-avatar>
+      <ion-label>{{item.label}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-left style="font-size: 20px;margin-top: 4%">
+        <ion-icon name="build"></ion-icon>
+      </ion-avatar>
+      <ion-label>设置</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
