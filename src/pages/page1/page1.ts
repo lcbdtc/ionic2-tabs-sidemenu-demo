@@ -1,25 +1,25 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {Nav, NavController} from 'ionic-angular';
+import {Page2Page} from "../page2/page2";
+import {HomePage} from "../home/home";
 
-/**
- * Generated class for the Page1Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
-  selector: 'page-page1',
-  templateUrl: 'page1.html',
+  selector: 'page-home',
+  templateUrl: 'home.html'
 })
 export class Page1Page {
+  @ViewChild(Nav) nav:Nav;
+  homePage: any = HomePage;
+  pages: Array<{ title: string, component: any }>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController) {
+    this.pages = [
+      {title:"page1",component:HomePage},
+      {title:"page2",component:Page2Page},
+    ]
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Page1Page');
+  openPage = (page) => {
+    this.nav.setRoot(page.component)
   }
-
 }
