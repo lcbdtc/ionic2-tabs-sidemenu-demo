@@ -14,6 +14,7 @@ import {Page2Page} from "../pages/page2/page2";
 import {PersonPage} from "../pages/person/person";
 import {HttpService} from "../providers/HttpService";
 import {NativeService} from "../providers/NativeService";
+import {LoginPage} from "../pages/login/login";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {NativeService} from "../providers/NativeService";
     HomePage,
     TabsPage,
     Page1Page,
-    Page2Page
+    Page2Page,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import {NativeService} from "../providers/NativeService";
     HomePage,
     TabsPage,
     Page1Page,
-    Page2Page
+    Page2Page,
+    LoginPage
   ],
   providers: [
     Camera,
